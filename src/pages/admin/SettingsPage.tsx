@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Settings, Bell, Lock, Palette, Globe } from "lucide-react";
+import { Settings, Bell, Lock, Palette } from "lucide-react";
 
 export default function SettingsPage() {
     const { toast } = useToast();
