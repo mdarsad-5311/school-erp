@@ -105,7 +105,10 @@ type ChartTooltipContentProps =
     TooltipContentProps<any, any> &
     React.ComponentProps<"div"> & {
         hideIndicator?: boolean;
+        hideLabel?: boolean;
+        indicator?: "line" | "dot" | "dashed";
         nameKey?: string;
+        labelKey?: string;
     };
 
 const ChartTooltipContent = React.forwardRef<
@@ -119,6 +122,7 @@ const ChartTooltipContent = React.forwardRef<
             className,
             hideIndicator = false,
             nameKey,
+            ...props
         },
         ref
     ) => {
@@ -136,6 +140,7 @@ const ChartTooltipContent = React.forwardRef<
                     "grid min-w-[8rem] gap-1.5 rounded-lg border bg-background px-2.5 py-1.5 text-xs shadow-xl",
                     className
                 )}
+                {...props}
             >
                 {entries.map((item: any, index: number) => {
                     const key = `${nameKey || item.name || item.dataKey || "value"}`;
