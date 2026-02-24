@@ -61,7 +61,7 @@ export default function AttendancePage() {
     return (
         <DashboardLayout role="admin" title="Attendance" userName="Admin User">
             {/* Filters */}
-            <div className="rounded-xl bg-card p-4 mb-6 ml-2">
+            <div className="rounded-xl bg-card p-4 mb-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Select value={selectedClass} onValueChange={setSelectedClass}>
                         <SelectTrigger className="w-40">
@@ -89,7 +89,7 @@ export default function AttendancePage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-6 ml-2">
+            <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="rounded-xl bg-card stat-card p-4 flex items-center gap-4">
                     <div className="h-12 w-12 rounded-full bg-success/10 flex items-center justify-center">
                         <Check className="h-6 w-6 text-success" />
@@ -120,7 +120,7 @@ export default function AttendancePage() {
             </div>
 
             {/* Attendance Table */}
-            <div className="rounded-xl stat-card bg-card overflow-hidden ml-2">
+            <div className="rounded-xl stat-card bg-card overflow-hidden">
                 <Table>
                     <TableHeader>
                         <TableRow className="bg-muted/50">

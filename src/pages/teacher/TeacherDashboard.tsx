@@ -8,7 +8,7 @@ export default function TeacherDashboard() {
     return (
         <DashboardLayout role="teacher" title="Dashboard" userName="Mr. Anderson">
             {/* Stats Grid */}
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6 ml-2">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
                 <StatCard
                     title="My Students"
                     value="128"

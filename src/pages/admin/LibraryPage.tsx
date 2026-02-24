@@ -105,7 +105,7 @@ export default function LibraryPage() {
             </div>
 
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>Library Books</CardTitle>
                     <div className="flex gap-3">
                         <div className="relative">

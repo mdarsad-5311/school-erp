@@ -25,7 +25,7 @@ export default function TeacherExamsPage() {
         <DashboardLayout role="teacher" title="Examinations" userName="Mr. Anderson">
             <div className="space-y-6">
                 <Card>
-                    <CardHeader className="flex flex-row items-center justify-between">
+                    <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <CardTitle>Upcoming Exams</CardTitle>
                         <Dialog open={isAddMarksOpen} onOpenChange={setIsAddMarksOpen}>
                             <DialogTrigger asChild>

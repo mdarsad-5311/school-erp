@@ -1,4 +1,4 @@
-import { Bell, Search, User } from "lucide-react";
+import { Bell, Search, User, Menu } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import {
@@ -11,17 +11,31 @@ import {
 } from "../../components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar";
 import { Badge } from "../../components/ui/badge";
+import { Sheet, SheetContent, SheetTrigger } from "../../components/ui/sheet";
+import { Sidebar } from "./Sidebar";
 
 interface HeaderProps {
     title: string;
     userName?: string;
     userRole?: string;
+    role: "admin" | "teacher" | "student" | "parent" | "accountant";
 }
 
-export function Header({ title, userName = "John Doe", userRole = "Admin" }: HeaderProps) {
+export function Header({ title, userName = "John Doe", userRole = "Admin", role }: HeaderProps) {
     return (
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-b-gray-200 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6 ml-2">
-            <div>
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-b-gray-200 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 px-6">
+            <div className="flex items-center gap-4">
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <Button variant="ghost" size="icon" className="lg:hidden">
+                            <Menu className="h-5 w-5" />
+                            <span className="sr-only">Toggle menu</span>
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left" className="p-0 w-64">
+                        <Sidebar role={role} showToggle={false} className="w-full h-full" />
+                    </SheetContent>
+                </Sheet>
                 <h1 className="text-xl font-semibold text-foreground">{title}</h1>
             </div>
 

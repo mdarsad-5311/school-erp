@@ -31,7 +31,7 @@ export default function AccountantDashboard() {
     return (
         <DashboardLayout role="accountant" title="Dashboard" userName="Jane Doe">
             {/* Stats Grid */}
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6 ml-2">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
                 <StatCard
                     title="Total Collected"
                     value="$124,500"
@@ -67,7 +67,7 @@ export default function AccountantDashboard() {
             </div>
 
             {/* Charts and Recent Payments */}
-            <div className="grid gap-6 lg:grid-cols-2 mb-6 ml-2">
+            <div className="grid gap-6 lg:grid-cols-2 mb-6">
                 {/* Fee Collection Chart */}
                 <div className="rounded-xl stat-card bg-card p-6">
                     <h3 className="text-lg font-semibold text-foreground mb-4">

@@ -60,7 +60,7 @@ export default function MessagesPage() {
             <div className="grid gap-6 lg:grid-cols-3">
                 {/* Message List */}
                 <Card className="lg:col-span-1">
-                    <CardHeader className="flex flex-row items-center justify-between">
+                    <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <CardTitle>Inbox</CardTitle>
                         <Dialog open={isComposeOpen} onOpenChange={setIsComposeOpen}>
                             <DialogTrigger asChild>

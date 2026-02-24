@@ -70,7 +70,7 @@ export default function TeachersPage() {
     return (
         <DashboardLayout role="admin" title="Teachers" userName="Admin User">
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>All Teachers</CardTitle>
                     <div className="flex gap-3">
                         <div className="relative">
@@ -79,7 +79,7 @@ export default function TeachersPage() {
                                 placeholder="Search teachers..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-9 w-64"
+                                className="pl-9 w-full sm:w-64"
                             />
                         </div>
                         <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>

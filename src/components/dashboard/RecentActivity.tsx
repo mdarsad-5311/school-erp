@@ -56,7 +56,7 @@ const typeColors = {
 
 export function RecentActivity() {
     return (
-        <div className="rounded-xl stat-card bg-card ml-2 p-6">
+        <div className="rounded-xl stat-card bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">Recent Activity</h3>
             <div className="space-y-4">
                 {activities.map((activity) => (
@@ -66,7 +66,7 @@ export function RecentActivity() {
                     >
                         <div
                             className={cn(
-                                "h-2 w-2 mt-2 rounded-full flex-shrink-0",
+                                "h-2 w-2 mt-2 rounded-full shrink-0",
                                 typeColors[activity.type]
                             )}
                         />
@@ -76,7 +76,7 @@ export function RecentActivity() {
                                 {activity.description}
                             </p>
                         </div>
-                        <span className="text-xs text-muted-foreground flex-shrink-0">
+                        <span className="text-xs text-muted-foreground shrink-0">
                             {activity.time}
                         </span>
                     </div>

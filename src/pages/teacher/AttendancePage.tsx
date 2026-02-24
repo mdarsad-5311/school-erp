@@ -27,7 +27,7 @@ export default function TeacherAttendancePage() {
     return (
         <DashboardLayout role="teacher" title="Attendance" userName="Mr. Anderson">
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>Mark Attendance</CardTitle>
                     <div className="flex gap-3">
                         <Select value={selectedClass} onValueChange={setSelectedClass}>

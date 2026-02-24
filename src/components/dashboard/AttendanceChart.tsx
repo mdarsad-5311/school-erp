@@ -18,7 +18,7 @@ const data = [
 
 export function AttendanceChart() {
     return (
-        <div className="rounded-xl stat-card bg-card ml-2 p-6">
+        <div className="rounded-xl stat-card bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">
                 Weekly Attendance Overview
             </h3>

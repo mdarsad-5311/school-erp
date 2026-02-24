@@ -108,12 +108,12 @@ export default function FeesPage() {
 
                 <TabsContent value="payments">
                     <Card>
-                        <CardHeader className="flex flex-row items-center justify-between">
+                        <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <CardTitle>Fee Payments</CardTitle>
                             <div className="flex gap-3">
                                 <div className="relative">
                                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                                    <Input placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-9 w-64" />
+                                    <Input placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-9 w-full sm:w-64" />
                                 </div>
                                 <Dialog open={isPaymentOpen} onOpenChange={setIsPaymentOpen}>
                                     <DialogTrigger asChild>

@@ -25,7 +25,7 @@ export default function ParentMessagesPage() {
         <DashboardLayout role="parent" title="Messages" userName="Sarah Smith">
             <div className="grid gap-6 lg:grid-cols-3">
                 <Card className="lg:col-span-1">
-                    <CardHeader className="flex flex-row items-center justify-between">
+                    <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <CardTitle>Inbox</CardTitle>
                         <Dialog open={isComposeOpen} onOpenChange={setIsComposeOpen}>
                             <DialogTrigger asChild><Button size="sm" className="btn-gradient"><Plus className="h-4 w-4" /></Button></DialogTrigger>

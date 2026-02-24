@@ -49,7 +49,7 @@ const typeVariants = {
 
 export function UpcomingEvents() {
     return (
-        <div className="rounded-xl stat-card bg-card ml-2 p-6">
+        <div className="rounded-xl stat-card bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">
                 Upcoming Events
             </h3>

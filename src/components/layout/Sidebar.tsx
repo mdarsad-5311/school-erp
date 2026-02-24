@@ -24,6 +24,8 @@ import { cn } from "@/lib/utils";
 
 interface SidebarProps {
     role: "admin" | "teacher" | "student" | "parent" | "accountant";
+    className?: string;
+    showToggle?: boolean;
 }
 
 const menuItems = {
@@ -80,7 +82,7 @@ const menuItems = {
     ],
 };
 
-export function Sidebar({ role }: SidebarProps) {
+export function Sidebar({ role, className, showToggle = true }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -94,8 +96,11 @@ export function Sidebar({ role }: SidebarProps) {
 
     return (
         <aside
-            className={`fixed left-0 top-0 h-screen bg-gradient-to-r from-blue-500 to-purple-700 text-gray-100 flex flex-col z-50 transition-all duration-300 ${collapsed ? "w-20" : "w-70"
-                }`}
+            className={cn(
+                "h-screen bg-gradient-to-r from-blue-500 to-purple-700 text-gray-100 flex flex-col z-50 transition-all duration-300",
+                collapsed ? "w-20" : "w-64",
+                className
+            )}
         >
             {/* Logo */}
             <div className="flex items-center gap-3 px-4 py-6 border-b border-gray-50 border-sidebar-border">
@@ -120,8 +125,8 @@ export function Sidebar({ role }: SidebarProps) {
                                 <Link
                                     to={item.path}
                                     className={cn(
-                                        "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-black font-semibold",
-                                        isActive && "active"
+                                        "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-black font-semibold hover:bg-white/10",
+                                        isActive && "bg-white/20"
                                     )}
                                     title={collapsed ? item.label : undefined}
                                 >
@@ -140,7 +145,7 @@ export function Sidebar({ role }: SidebarProps) {
             <div className="border-t border-gray-50 border-sidebar-border p-3">
                 <button
                     onClick={handleLogout}
-                    className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-black font-semibold hover:text-red-500"
+                    className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-black font-semibold hover:text-red-500 hover:bg-white/10"
                     title={collapsed ? "Logout" : undefined}
                 >
                     <LogOut className="h-5 w-5 flex-shrink-0" />
@@ -149,16 +154,18 @@ export function Sidebar({ role }: SidebarProps) {
             </div>
 
             {/* Toggle Button */}
-            <button
-                onClick={() => setCollapsed(!collapsed)}
-                className="absolute -right-3 top-20 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-shadow"
-            >
-                {collapsed ? (
-                    <ChevronRight className="h-4 w-4" />
-                ) : (
-                    <ChevronLeft className="h-4 w-4" />
-                )}
-            </button>
+            {showToggle && (
+                <button
+                    onClick={() => setCollapsed(!collapsed)}
+                    className="absolute -right-3 top-20 hidden lg:flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-shadow"
+                >
+                    {collapsed ? (
+                        <ChevronRight className="h-4 w-4" />
+                    ) : (
+                        <ChevronLeft className="h-4 w-4" />
+                    )}
+                </button>
+            )}
         </aside>
     );
 }

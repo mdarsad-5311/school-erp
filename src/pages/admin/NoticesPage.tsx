@@ -64,7 +64,7 @@ export default function NoticesPage() {
     return (
         <DashboardLayout role="admin" title="Notices" userName="Admin User">
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>All Notices</CardTitle>
                     <div className="flex gap-3">
                         <div className="relative">

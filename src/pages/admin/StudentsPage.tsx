@@ -132,7 +132,7 @@ export default function StudentsPage() {
     return (
         <DashboardLayout role="admin" title="Students" userName="Admin User">
             {/* Header Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-6 ml-2">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
                 <div className="relative flex-1">
                     <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                     <Input
@@ -167,7 +167,7 @@ export default function StudentsPage() {
             </div>
 
             {/* Students Table */}
-            <div className="rounded-xl stat-card bg-card overflow-hidden ml-2">
+            <div className="rounded-xl stat-card bg-card overflow-hidden">
                 <Table>
                     <TableHeader>
                         <TableRow className="border-b-gray-100">

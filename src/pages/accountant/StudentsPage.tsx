@@ -25,7 +25,7 @@ export default function AccountantStudentsPage() {
     return (
         <DashboardLayout role="accountant" title="Students" userName="Jane Doe">
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>Student Fee Status</CardTitle>
                     <div className="relative">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />

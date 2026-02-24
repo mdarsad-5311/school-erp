@@ -13,7 +13,7 @@ export default function TimetablePage() {
     return (
         <DashboardLayout role="admin" title="Timetable" userName="Admin User">
             <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <CardTitle>Class Timetable</CardTitle>
                     <Select value={selectedClass} onValueChange={setSelectedClass}>
                         <SelectTrigger className="w-48">
